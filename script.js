@@ -62,3 +62,26 @@ console.log(`Your Choice: ${humanChoice}`);
 // call the computer choice function that stores it's return value on the compute
 let computerChoice = getComputerChoice();
 console.log(`Computer's Choice: ${computerChoice}`);
+
+
+
+
+// Step 2: Write a function that determines who is the winner following the rules
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice === computerChoice){
+        console.log("DRAW");
+    }else if(humanChoice === "rock" && computerChoice === "paper"){
+        console.log("You Lose: paper beats rock");
+    }else if(humanChoice === "rock" && computerChoice === "scissors"){
+        console.log("You Won: rock beats scissors");
+    }else if(humanChoice === "paper" && computerChoice === "scissors"){
+        console.log("You Lose: scissors beats paper");
+    }else if(humanChoice === "paper" && computerChoice === "rock"){
+        console.log("Yow Won: paper beats rock");
+    }else if(humanChoice === "scissors" && computerChoice === "rock"){
+        console.log("You Lose: rock beats scissors");
+    }else if(humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("You Won: scissors beats paper");
+    }
+}
