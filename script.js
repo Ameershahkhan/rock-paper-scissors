@@ -33,13 +33,32 @@ function getHumanChoice() {
 
 // write a function that returns the computer generated choice
 
-// call the human choice function and stores it's returned value in a variable
-try{
-    let humanChoice = getHumanChoice();
-    console.log(humanChoice);
-}catch(e){
-    console.log(e.message);
+function getComputerChoice(){
+    // generate a random number between 1 to 3 and store it in a variable
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
+    
+    // if number is 1 than return rock
+    // if number is 2 than return scissors
+    // if number is 3 than return paper
+    
+    let computerChoice;
+
+    if (randomNumber === 1){
+        computerChoice = "rock"
+    }else if(randomNumber === 2){
+        computerChoice = "scissors"
+    }else if(randomNumber === 3){
+        computerChoice = "paper"
+    }
+
+    return computerChoice;
 }
 
-// call the computer choice function that stores it's return value on the computer
+// call the human choice function and stores it's returned value in a variable
 
+let humanChoice = getHumanChoice();
+console.log(`Your Choice: ${humanChoice}`);
+
+// call the computer choice function that stores it's return value on the compute
+let computerChoice = getComputerChoice();
+console.log(`Computer's Choice: ${computerChoice}`);
