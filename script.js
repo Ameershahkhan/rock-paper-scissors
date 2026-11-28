@@ -66,22 +66,36 @@ console.log(`Computer's Choice: ${computerChoice}`);
 
 
 
-// Step 2: Write a function that determines who is the winner following the rules
+// Step 2: Write a function that determines who is the winner of the current round following the rules
+
+// initialize variables that keeps the track of scores
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice === computerChoice){
         console.log("DRAW");
     }else if(humanChoice === "rock" && computerChoice === "paper"){
+        computerScore++;
         console.log("You Lose: paper beats rock");
     }else if(humanChoice === "rock" && computerChoice === "scissors"){
+        humanScore++;
         console.log("You Won: rock beats scissors");
     }else if(humanChoice === "paper" && computerChoice === "scissors"){
+        computerScore++;
         console.log("You Lose: scissors beats paper");
     }else if(humanChoice === "paper" && computerChoice === "rock"){
+        humanScore++;
         console.log("Yow Won: paper beats rock");
     }else if(humanChoice === "scissors" && computerChoice === "rock"){
+        computerScore++;
         console.log("You Lose: rock beats scissors");
     }else if(humanChoice === "scissors" && computerChoice === "paper"){
+        humanScore++;
         console.log("You Won: scissors beats paper");
     }
 }
+
+playRound(humanChoice, computerChoice);
+console.log(`Your Score: ${humanScore}`);
+console.log(`Computer Score: ${computerScore}`);
