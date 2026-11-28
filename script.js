@@ -54,17 +54,6 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-// call the human choice function and stores it's returned value in a variable
-
-let humanChoice = getHumanChoice();
-console.log(`Your Choice: ${humanChoice}`);
-
-// call the computer choice function that stores it's return value on the compute
-let computerChoice = getComputerChoice();
-console.log(`Computer's Choice: ${computerChoice}`);
-
-
-
 
 // Step 2: Write a function that determines who is the winner of the current round following the rules
 
@@ -96,6 +85,29 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-playRound(humanChoice, computerChoice);
-console.log(`Your Score: ${humanScore}`);
-console.log(`Computer Score: ${computerScore}`);
+
+// write a function that calls the getHumanChoice, getComputerChoice, playRound function 5 times
+function playGame(){
+    // call these functions 5 times
+    for(let i = 0; i < 5; i++){
+        // store the return values in the variables
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+
+        // pass the variables to the playRound function
+        playRound(humanChoice, computerChoice);
+        console.log(`Your Score: ${humanScore}`);
+        console.log(`Computer Score: ${computerScore}`);
+    }
+
+    
+    // when the function calls done, declare the winner who score is higher 
+    if (humanScore > computerScore){
+        console.log("Congratulations! You Won.");
+    }else {
+        console.log("Too bad: You Lost to computer");
+    }
+
+}
+
+playGame();
